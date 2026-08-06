@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salting &amp; Hashing Code Along</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Salting &amp; Hashing</h1>
+    <p class="subtitle">A tiny login system. Watch what actually gets stored.</p>
+
+    <section class="panel">
+      <h2>Register</h2>
+      <form id="register-form">
+        <label>Username <input type="text" id="register-username" required /></label>
+        <label>Password <input type="password" id="register-password" required /></label>
+        <button type="submit">Create Account</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Log In</h2>
+      <form id="login-form">
+        <label>Username <input type="text" id="login-username" required /></label>
+        <label>Password <input type="password" id="login-password" required /></label>
+        <button type="submit">Log In</button>
+      </form>
+      <button id="logout-btn" hidden>Log Out</button>
+    </section>
+
+    <section class="panel">
+      <h2>Status</h2>
+      <p id="status">Not logged in.</p>
+    </section>
+
+    <section class="panel under-the-hood">
+      <h2>Under the Hood <span class="tag">for learning only</span></h2>
+      <p>
+        This box shows what the <em>server</em> actually stores for the
+        last account you registered. A real app would <strong>never</strong>
+        send this to the browser - we're only doing it so you can see
+        salting and hashing happen.
+      </p>
+      <dl id="hood">
+        <dt>Password you typed</dt>
+        <dd id="hood-password">-</dd>
+        <dt>Salt (random, unique per user)</dt>
+        <dd id="hood-salt">-</dd>
+        <dt>Hash (what actually gets saved)</dt>
+        <dd id="hood-hash">-</dd>
+      </dl>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
